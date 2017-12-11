@@ -14,7 +14,7 @@
 package com.meetme.plugins.jira.gerrit.data.dto;
 
 import com.meetme.plugins.jira.gerrit.tabpanel.GerritEventKeys;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.attr.Change;
+import com.sonymobile.tools.gerrit.gerritevents.dto.attr.Change;
 
 import net.sf.json.JSONObject;
 

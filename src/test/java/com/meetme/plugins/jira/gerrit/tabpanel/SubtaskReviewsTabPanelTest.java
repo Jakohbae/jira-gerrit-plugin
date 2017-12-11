@@ -34,7 +34,7 @@ import com.atlassian.jira.plugin.issuetabpanel.IssueAction;
 import com.atlassian.jira.user.ApplicationUser;
 import com.meetme.plugins.jira.gerrit.data.GerritConfiguration;
 import com.meetme.plugins.jira.gerrit.data.IssueReviewsManager;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryException;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryException;
 
 /**
  * @author Joe Hansche

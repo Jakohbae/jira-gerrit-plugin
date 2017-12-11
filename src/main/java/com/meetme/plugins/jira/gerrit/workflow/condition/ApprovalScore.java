@@ -20,7 +20,7 @@ import com.meetme.plugins.jira.gerrit.data.dto.GerritApproval;
 import com.meetme.plugins.jira.gerrit.data.dto.GerritChange;
 import com.opensymphony.module.propertyset.PropertySet;
 import com.opensymphony.workflow.WorkflowException;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryException;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -25,7 +25,7 @@ import com.meetme.plugins.jira.gerrit.data.GerritConfiguration;
 import com.meetme.plugins.jira.gerrit.data.IssueReviewsManager;
 import com.meetme.plugins.jira.gerrit.data.dto.GerritChange;
 import com.opensymphony.workflow.WorkflowContext;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryException;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryException;
 
 /**
  * Base class for setting up mocks

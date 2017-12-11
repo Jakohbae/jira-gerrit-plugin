@@ -23,7 +23,7 @@ import com.atlassian.jira.plugin.webfragment.model.JiraHelper;
 import com.atlassian.jira.user.ApplicationUser;
 import com.meetme.plugins.jira.gerrit.data.IssueReviewsManager;
 import com.meetme.plugins.jira.gerrit.data.dto.GerritChange;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryException;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryException;
 
 @SuppressWarnings("unchecked")
 public class GerritReviewsIssueSidePanel extends AbstractJiraContextProvider {

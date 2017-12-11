@@ -19,9 +19,9 @@ import com.atlassian.jira.config.util.JiraHome;
 import com.atlassian.sal.api.auth.LoginUriProvider;
 import com.atlassian.sal.api.user.UserManager;
 import com.atlassian.templaterenderer.TemplateRenderer;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryException;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.GerritQueryHandler;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.ssh.Authentication;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryException;
+import com.sonymobile.tools.gerrit.gerritevents.GerritQueryHandler;
+import com.sonymobile.tools.gerrit.gerritevents.ssh.Authentication;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;

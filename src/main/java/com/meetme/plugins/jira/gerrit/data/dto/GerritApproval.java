@@ -13,8 +13,7 @@
  */
 package com.meetme.plugins.jira.gerrit.data.dto;
 
-import com.atlassian.crowd.embedded.api.User;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.attr.Approval;
+import com.sonymobile.tools.gerrit.gerritevents.dto.attr.Approval;
 
 import net.sf.json.JSONObject;
 
@@ -23,18 +22,9 @@ import com.atlassian.jira.user.ApplicationUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static com.meetme.plugins.jira.gerrit.tabpanel.GerritEventKeys.BY;
-import static com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.GerritEventKeys.EMAIL;
-import static com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.GerritEventKeys.NAME;
-import com.sonyericsson.hudson.plugins.gerrit.gerritevents.dto.attr.Approval;
-
 public class GerritApproval extends Approval implements Comparable<GerritApproval> {
     private static final Logger log = LoggerFactory.getLogger(GerritApproval.class);
 
-    /** The approver's name */
-    private String by;
-    /** The approver's email */
-    private String byEmail;
     /** The JIRA user associated with the same email */
     private ApplicationUser user;
 
@@ -63,18 +53,6 @@ public class GerritApproval extends Approval implements Comparable<GerritApprova
     public void fromJson(JSONObject json) {
         log.debug("GerritApproval from json: " + json.toString(4, 0));
         super.fromJson(json);
-
-        if (json.containsKey(BY)) {
-            JSONObject by = json.getJSONObject(BY);
-
-            if (by.containsKey(NAME)) {
-                this.setBy(by.getString(NAME));
-            }
-
-            if (by.containsKey(EMAIL)) {
-                this.setByEmail(by.getString(EMAIL));
-            }
-        }
     }
 
     @Override
@@ -96,24 +74,6 @@ public class GerritApproval extends Approval implements Comparable<GerritApprova
     }
 
     /**
-     * Returns the approver's name.
-     *
-     * @return Approver's name as a string.
-     */
-    public String getBy() {
-        return by;
-    }
-
-    /**
-     * Sets the approver's name.
-     *
-     * @param by Approver's name
-     */
-    public void setBy(String by) {
-        this.by = by;
-    }
-
-    /**
      * Returns the approval score as an integer.
      *
      * @return the integer approval score
@@ -126,14 +86,6 @@ public class GerritApproval extends Approval implements Comparable<GerritApprova
         }
 
         return 0;
-    }
-
-    public String getByEmail() {
-        return byEmail;
-    }
-
-    public void setByEmail(String byEmail) {
-        this.byEmail = byEmail;
     }
 
     @Override
@@ -151,6 +103,6 @@ public class GerritApproval extends Approval implements Comparable<GerritApprova
     @Override
     public String toString() {
         int value = getValueAsInt();
-        return (value > 0 ? "+" : "") + value + " by " + getBy();
+        return (value > 0 ? "+" : "") + value + " by " + getBy().getName();
     }
 }

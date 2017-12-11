@@ -155,9 +155,18 @@
         <!-- Project dependencies -->
         <dependency>
             <!-- Using this for gerrit integration -->
-            <groupId>com.sonyericsson.hudson.plugins.gerrit</groupId>
+            <!--<groupId>com.sonyericsson.hudson.plugins.gerrit</groupId>-->
+            <!--<artifactId>gerrit-events</artifactId>-->
+            <!--<version>1.99.1</version>-->
+            <!--<exclusions>-->
+                <!--<exclusion>-->
+                    <!--<groupId>com.jcraft</groupId>-->
+                    <!--<artifactId>jsch</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+            <groupId>com.sonymobile.tools.gerrit</groupId>
             <artifactId>gerrit-events</artifactId>
-            <version>1.99.1</version>
+            <version>2.11.1-patched</version>
             <exclusions>
                 <exclusion>
                     <groupId>com.jcraft</groupId>
