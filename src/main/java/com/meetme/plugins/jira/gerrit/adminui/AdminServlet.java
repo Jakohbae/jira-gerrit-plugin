@@ -97,6 +97,7 @@ public class AdminServlet extends HttpServlet {
         map.put(GerritConfiguration.FIELD_SSH_PORT, config.getSshPort());
         map.put(GerritConfiguration.FIELD_SSH_USERNAME, config.getSshUsername());
         map.put(GerritConfiguration.FIELD_SSH_PRIVATE_KEY, config.getSshPrivateKey());
+        map.put(GerritConfiguration.FIELD_SSH_TIMEOUT, config.getConnectionTimeout());
 
         map.put(GerritConfiguration.FIELD_QUERY_ISSUE, config.getIssueSearchQuery());
         map.put(GerritConfiguration.FIELD_QUERY_PROJECT, config.getProjectSearchQuery());
@@ -225,6 +226,8 @@ public class AdminServlet extends HttpServlet {
                 configurationManager.setSshUsername(item.getString());
             } else if (GerritConfiguration.FIELD_SSH_PORT.equals(fieldName)) {
                 configurationManager.setSshPort(Integer.parseInt(item.getString()));
+            } else if (GerritConfiguration.FIELD_SSH_TIMEOUT.equals(fieldName)) {
+                configurationManager.setConnectionTimeout(Integer.parseInt(item.getString()));
             } else if (GerritConfiguration.FIELD_QUERY_ISSUE.equals(fieldName)) {
                 configurationManager.setIssueSearchQuery(item.getString());
             } else if (GerritConfiguration.FIELD_QUERY_PROJECT.equals(fieldName)) {

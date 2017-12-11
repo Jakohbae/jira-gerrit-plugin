@@ -142,6 +142,17 @@ public class GerritConfigurationImpl implements GerritConfiguration {
     }
 
     @Override
+    public int getConnectionTimeout(){
+        String timeout = (String) settings.get(FIELD_SSH_TIMEOUT);
+        return timeout == null ? DEFAULT_SSH_TIMEOUT : Integer.parseInt(timeout);
+    }
+
+    @Override
+    public void setConnectionTimeout(int connectionTimeout){
+        settings.put(FIELD_SSH_TIMEOUT, Integer.toString(connectionTimeout));
+    }
+
+    @Override
     public boolean isSshValid() {
         return !Strings.isNullOrEmpty(getSshHostname())
                 && !Strings.isNullOrEmpty(getSshUsername())
