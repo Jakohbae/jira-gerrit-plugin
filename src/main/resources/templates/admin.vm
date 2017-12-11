@@ -66,7 +66,7 @@
             <div class="field-group">
                 <label for="sshTimeout">
                 	$i18n.getText("gerrit.admin.sshTimeout.label")
-                	<span class="aui-icon icon-required"></span>
+                	<span class="aui-icon"></span>
                 </label>
                 <input type="text" id="sshTimeout" name="sshTimeout" class="text" value="$!sshTimeout" />
                 <div class="description">$i18n.getText("gerrit.admin.sshTimeout.description")</div>

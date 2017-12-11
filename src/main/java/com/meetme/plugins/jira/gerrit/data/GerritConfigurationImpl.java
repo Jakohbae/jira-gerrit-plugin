@@ -149,7 +149,7 @@ public class GerritConfigurationImpl implements GerritConfiguration {
 
     @Override
     public void setConnectionTimeout(int connectionTimeout){
-        settings.put(FIELD_SSH_TIMEOUT, Integer.toString(connectionTimeout));
+        settings.put(FIELD_SSH_TIMEOUT, connectionTimeout < 0 ? "0" : Integer.toString(connectionTimeout));
     }
 
     @Override
