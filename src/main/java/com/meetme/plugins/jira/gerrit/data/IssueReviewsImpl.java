@@ -86,7 +86,8 @@ public class IssueReviewsImpl implements IssueReviewsManager {
         }
 
         Authentication auth = new Authentication(configuration.getSshPrivateKey(), configuration.getSshUsername());
-        GerritQueryHandler query = new GerritQueryHandler(configuration.getSshHostname(), configuration.getSshPort(), null, auth, configuration.getConnectionTimeout());
+        GerritQueryHandler query = new GerritQueryHandler(configuration.getSshHostname(), configuration.getSshPort(),
+                                                            null, auth, configuration.getConnectionTimeout());
         List<JSONObject> reviews;
 
         try {

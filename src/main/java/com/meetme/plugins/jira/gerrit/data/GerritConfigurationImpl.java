@@ -16,6 +16,7 @@ package com.meetme.plugins.jira.gerrit.data;
 import com.atlassian.sal.api.pluginsettings.PluginSettings;
 import com.atlassian.sal.api.pluginsettings.PluginSettingsFactory;
 import com.google.common.base.Strings;
+import com.sonymobile.tools.gerrit.gerritevents.GerritDefaultValues;
 
 import java.io.File;
 import java.net.URI;
@@ -149,7 +150,8 @@ public class GerritConfigurationImpl implements GerritConfiguration {
 
     @Override
     public void setConnectionTimeout(int connectionTimeout){
-        settings.put(FIELD_SSH_TIMEOUT, connectionTimeout < 0 ? "0" : Integer.toString(connectionTimeout));
+        settings.put(FIELD_SSH_TIMEOUT, connectionTimeout < 0 ?
+                GerritDefaultValues.DEFAULT_GERRIT_SSH_CONNECTION_TIMEOUT : Integer.toString(connectionTimeout));
     }
 
     @Override

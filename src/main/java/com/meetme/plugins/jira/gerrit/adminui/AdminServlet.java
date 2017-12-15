@@ -184,7 +184,8 @@ public class AdminServlet extends HttpServlet {
         }
 
         Authentication auth = new Authentication(configuration.getSshPrivateKey(), configuration.getSshUsername());
-        GerritQueryHandler query = new GerritQueryHandler(configuration.getSshHostname(), configuration.getSshPort(), null, auth, configuration.getConnectionTimeout());
+        GerritQueryHandler query = new GerritQueryHandler(configuration.getSshHostname(), configuration.getSshPort(),
+                                                            null, auth, configuration.getConnectionTimeout());
 
         try {
             query.queryJava("limit:1", false, false, false);
